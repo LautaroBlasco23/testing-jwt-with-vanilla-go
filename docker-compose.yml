@@ -1,0 +1,15 @@
+services:
+  postgres_db:
+    image: postgres:latest
+    container_name: go-jwt
+    restart: always
+    environment:
+      - POSTGRES_USER=lauti
+      - POSTGRES_PASSWORD=test123
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_db2:/var/lib/postgresql/data
+volumes:
+  postgres_db2:
+    driver: local
